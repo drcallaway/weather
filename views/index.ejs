@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form method="post">
+        <p>Please enter the name of a city: <input type="text" name="city"> <input type="submit" value="Get Today's Weather"></p>
+        <p>
+            <input type="radio" name="units" value="imperial" checked>Fahrenheit<br>
+            <input type="radio" name="units" value="metric">Celsius
+        </p>
+    </form>
+    <% if (locals.weather) { %>
+        <h3>City: <%= weather.city %></h3>
+        <h3>High: <%= weather.high %></h3>
+        <h3>Low: <%= weather.low %></h3>
+        <h3>Description: <%= weather.description %></h3>
+    <% } %>
+  </body>
+</html>
